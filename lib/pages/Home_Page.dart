@@ -53,7 +53,11 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSpacing: 12.0,
                   crossAxisSpacing: 12.0,
                   childAspectRatio: 1.35,
-                  children: pokemons.map((e) => ItemPokemonWidget(name: e["name"],image: e["img"],)).toList(),
+                  children: pokemons.map((e) => ItemPokemonWidget(
+                    name: e["name"],
+                    image: e["img"],
+                    types: List<String>.from(e["type"].map((item)=>item)),
+                  )).toList(),
                 ),
               ],
             ),
