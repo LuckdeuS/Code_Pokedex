@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon_model.dart';
 import 'package:pokedex/pages/detail_page.dart';
+import 'package:pokedex/ui/general/colors.dart';
 import 'package:pokedex/ui/widgets/item_type_widget.dart';
 
 class ItemPokemonWidget extends StatelessWidget {
@@ -17,11 +18,11 @@ class ItemPokemonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPage(pokemon: pokemon,)));
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Color(0xff4CCFB2),
+          color: colorsPokemon[pokemon.type.first],
           borderRadius: BorderRadius.circular(18.0),
         ),
         child: Stack(
